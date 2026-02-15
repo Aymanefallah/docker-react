@@ -20,11 +20,11 @@ jobs:
 
       # 3️⃣ Build Docker image
       - name: Build Docker image
-        run: docker build -t ayfalmane19/react-test -f Dockerfile.dev .
+        run: docker build -t ayfalmane19/docker-react  .
 
       # 4️⃣ Run tests
       - name: Run tests
-        run: docker run -e CI=true ayfalmane19/react-test npm test
+        run: docker run -e CI=true ayfalmane19/docker-react npm test
       # 5️⃣ Generate deployment package
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
